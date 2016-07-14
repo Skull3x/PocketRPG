@@ -35,13 +35,13 @@ class MyListener extends Main implements Listener {
           $event->setCancelled();
         } elseif($damager->getLevel() == $this->getServer()->getLevelByName($cfglevel)) {
             if($p->hasPermission("class.assassin")) {
-              if($damager->getItemInHand()->getId() == 388) {
+              if($damager->getItemInHand()->getId() == 288) {
                 $x = $hit->x;
                 $y = $hit->y;
                 $z = $hit->z;
                 $hitpos = $hit->getPosition(new Vector3($x, $y, $z));
                 $level->addParticle(new CriticalParticle($hitpos));
-                $this->setDamage(getDamage() + 3);
+                $this->setDamage(4);
               }
             } elseif($p->hasPermission("class.mage")) {
               if($damage->getItemInHand()->getId() == 280) {
@@ -52,7 +52,7 @@ class MyListener extends Main implements Listener {
                 $level->addParticle(new LavaParticle($hitpos));
                 $this->setKnockBack(1);
                 $hit->setOnFire(4);
-                $this->setDamage(getDamage() + 4);
+                $this->setDamage(4);
               }
             } elseif($p->hasPermission("class.tanker")) {
               if($damager->getItemInHand()->getId() == 328) {
@@ -62,7 +62,7 @@ class MyListener extends Main implements Listener {
                 $hitpos = $hit->getPosition(new Vector3($x, $y, $z));
                 $level->addParticle(new ExplodeParticle($hitpos));
                 $this->setKnockBack(3);
-                $this->setDamage(getDamage() + 2);
+                $this->setDamage(3);
               }
             } elseif($p->hasPermission("class.warrior")) {
               if($damager->getItemInHand()->getId() == 267) {
@@ -72,7 +72,7 @@ class MyListener extends Main implements Listener {
                 $hitpos = $hit->getPosition(new Vector3($x, $y, $z));
                 $level->addParticle(new CriticalParticle($hitpos));
                 $this->setKnockBack(2);
-                $this->setDamage(getDamage() + 6);
+                $this->setDamage(6);
               }
             }
         }
